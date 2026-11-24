@@ -1,0 +1,23 @@
+{
+  "name": "zeng-bianzhong-digital",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "曾侯乙编钟数字合成与测音 — 合瓦形双音模态合成 / AudioWorklet / Web Audio 分析节点",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc --noEmit && vite build",
+    "build:vite": "vite build",
+    "preview": "vite preview --host 127.0.0.1",
+    "typecheck": "tsc --noEmit",
+    "test": "tsx scripts/verify.ts",
+    "verify": "tsx scripts/verify.ts",
+    "smoke": "node scripts/browser-smoke.mjs"
+  },
+  "devDependencies": {
+    "puppeteer-core": "^25.18.1",
+    "tsx": "^4.23.15",
+    "typescript": "^5.6.3",
+    "vite": "^5.4.11"
+  }
+}

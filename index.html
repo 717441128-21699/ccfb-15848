@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>曾侯乙 · 数字编钟 | 合瓦双音模态合成与实录测音</title>
+    <meta name="description" content="六十五口曾侯乙编钟网页数字乐器：AudioWorklet 模态叠加合成正鼓/侧鼓双音，钟面位置激发，尺寸/壁厚/锡含量参数化，AnalyserNode 实录测音。" />
+  </head>
+  <body>
+    <div id="app">
+      <header class="topbar">
+        <div class="brand">
+          <div class="seal">曾侯乙</div>
+          <div>
+            <h1>数字编钟 · 合瓦双音</h1>
+            <p class="subtitle">六十五口 · 一钟双音 · 位置模态合成 · 实录测音</p>
+          </div>
+        </div>
+        <div class="top-status">
+          <span id="bench-badge" class="badge badge-pass" data-testid="header-benchmark">音程对标 …</span>
+          <span id="latency-badge" class="badge" data-testid="latency">音频引擎初始化中…</span>
+          <button id="sound-toggle" class="btn btn-primary">🔈 启用声音</button>
+        </div>
+      </header>
+
+      <nav class="tabs" role="tablist" aria-label="功能分区">
+        <button class="tab" role="tab" data-tab="rack" data-testid="tab-rack">编钟架</button>
+        <button class="tab" role="tab" data-tab="strike" data-testid="tab-strike">单钟敲击</button>
+        <button class="tab" role="tab" data-tab="params" data-testid="tab-params">钟体参数</button>
+        <button class="tab" role="tab" data-tab="analyze" data-testid="tab-analyze">实录测音</button>
+      </nav>
+
+      <main class="panels">
+        <section class="panel" data-panel="rack" id="panel-rack"><div id="rack-root"></div></section>
+        <section class="panel" data-panel="strike" id="panel-strike" hidden><div id="strike-root"></div></section>
+        <section class="panel" data-panel="params" id="panel-params" hidden><div id="params-root"></div></section>
+        <section class="panel" data-panel="analyze" id="panel-analyze" hidden><div id="analyze-root"></div></section>
+      </main>
+
+      <footer class="footer">
+        <span>声学标度 f∝h·L⁻²√(E/ρ) · AudioWorklet 模态衰减叠加 · AnalyserNode/FFT 测音</span>
+        <span>尺寸/编组据湖北省博物馆、随州市博物馆公开资料；测音基准：王栢村 等 (2022), DOI 10.6282/JASV.202212_14(1_2).0005</span>
+      </footer>
+    </div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
